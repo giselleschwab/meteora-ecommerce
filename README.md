@@ -1,6 +1,5 @@
 # Meteora - E-commerce
 
-### E-commerce desenvolvido no Challenge Front-End da Alura.
+### E-commerce em desenvolvimento para o Challenge Front-End da Alura.
 
-### Em construção... 
 
