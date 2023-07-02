@@ -1,0 +1,17 @@
+.input__search {
+    width: 150px;
+    height: 25px;
+    padding: 7.5px 0 6.5px 15px;
+}
+
+::placeholder {
+    font-family: var(--fonte);
+    font-size: 15px;
+}
+
+@media screen and (max-width: 769px) {
+    .input__search {
+        width: 14rem;
+        border: 1px solid #000;
+    }
+}
