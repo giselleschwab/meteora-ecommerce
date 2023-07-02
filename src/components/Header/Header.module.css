@@ -1,0 +1,116 @@
+.header {
+    margin: 0;
+    display: flex;
+
+}
+
+.header__links {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--preto);
+}
+
+.header__links img {
+    width: auto;
+    align-items: center;
+    padding-top: 0.2rem;
+    padding-left: 0.5rem;
+}
+
+.header__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2rem;;
+    background-color: var(--preto);
+}
+
+.header__links ul {
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 0;
+}
+
+.header__links li {
+    list-style: none;
+    font-size: 1rem;
+}
+
+.menu__hamburguer {
+    display: none;
+    width: auto;
+
+}
+
+@media screen and (max-width: 769px) {
+    .header {
+        width: auto;
+        flex-wrap: wrap;
+    }
+
+    .header__links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__links li {
+        display: none;
+    }
+
+    .logo__meteora {
+        order: 1; /* Altera a ordem da imagem no fluxo do documento */
+      }
+    
+
+    .menu__hamburguer {
+        display: flex;
+    }
+
+    .menu__toggle {
+        order: 2; /* Altera a ordem da imagem no fluxo do documento */
+      }
+
+    .menu__toggle img {
+        padding-right: 0.5rem;
+        width: 1.4rem;
+    }
+
+
+    .header__search {
+        padding-top: 1.5rem;
+        width: 100%;
+        background-color: var(--branco);
+        gap: 0.5rem;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 922px) {
+    .header__links {
+        gap: 0.5rem;
+    }
+
+    .header__links img {
+
+        margin-top: 0.3rem;
+    }
+
+    .header__links li {
+        list-style: none;
+        font-size: 0.8rem;
+    }
+
+    .header__links ul {
+        gap: 1.25rem;
+    }
+
+    .header__search {
+        gap: 0.5rem;
+        padding-right: 1rem;
+    }
+}

@@ -1,0 +1,10 @@
+.banner img {
+    width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+    .banner img {
+        margin-top: 1.5rem;
+        
+    }
+}

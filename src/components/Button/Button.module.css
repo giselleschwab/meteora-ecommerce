@@ -1,0 +1,22 @@
+.button {
+  width: 5rem;
+  height: 2.6rem;
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonte);
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid var(--branco);
+  padding: 9px 12px;
+  cursor:pointer;
+}
+
+@media screen and (max-width: 769px) {
+  .button {
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 1px solid var(--preto);
+    width: 5.5rem;
+    font-weight: 500;
+  }
+}
