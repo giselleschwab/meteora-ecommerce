@@ -1,0 +1,9 @@
+.btn__view {
+    background-color: var(--roxo-meteora);
+    font-family: (--fonte);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--branco);
+    border: var(--branco);
+    padding: 0.5rem;
+}
