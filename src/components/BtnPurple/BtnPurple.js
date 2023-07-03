@@ -1,6 +1,6 @@
-import styles from './BtnViewMore.module.css';
+import styles from './BtnPurple.module.css'
 
-function BtnViewMore({ label, handleClick }) {
+function BtnPurple ({ label, handleClick }) {
     return (
         <button
             className={styles.btn__view}
@@ -10,4 +10,4 @@ function BtnViewMore({ label, handleClick }) {
     )
 }
 
-export default BtnViewMore; 
+export default BtnPurple; 

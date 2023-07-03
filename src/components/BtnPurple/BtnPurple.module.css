@@ -6,4 +6,6 @@
     color: var(--branco);
     border: var(--branco);
     padding: 0.5rem;
+    height: 2.35rem;
+    width: 5.25rem;
 }
