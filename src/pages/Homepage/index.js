@@ -3,6 +3,7 @@ import Categories from "components/Categories/Categories";
 import Features from "components/Features/Features";
 import Header from "components/Header";
 import Products from "components/Products/Products";
+import Footer from "components/Footer/Footer";
 
 function Homepage() {
     return(
@@ -12,6 +13,7 @@ function Homepage() {
         <Categories />
         <Products />
         <Features />
+        <Footer />
     </>
     )
 }
