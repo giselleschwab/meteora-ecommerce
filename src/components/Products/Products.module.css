@@ -5,21 +5,49 @@ h3 {
     text-align: center;
 }
 
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.88rem;
+}
+
 .products__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 21.8rem;
     border: 1px solid rgba(0, 0, 0, 0.13);
     margin-left: 1rem;
 }
 
 .products__description h4 {
+    font-family: var(--fonte);
     padding-left: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .products__description p {
+    font-family: var(--fonte);
+    font-size: 0.8rem;
     padding-left: 1rem;
 }
 
 .products__btnView {
     padding-left: 1rem; 
-    padding-bottom: 1rem;;
+    padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px){
+    .products__description{
+      width: 20.6rem;  
+      margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .products__description{
+      width: 20.6rem;  
+      margin-left: 0;
+    }
 }

@@ -11,7 +11,7 @@ function Categories() {
     return (
         <section className={styles.categories}>
             <h3> Busque por categoria: </h3>
-            <div class={styles.categories__cards}>
+            <div className={styles.categories__cards}>
                 <img src={tshrits} alt="t-shirts cards"></img>
                 <img src={bags} alt="bags cards"></img>
                 <img src={shoes} alt="shoes cards"></img>
