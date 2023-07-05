@@ -1,0 +1,10 @@
+.carousel_imagens {
+    width: 100%;
+    margin:0;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel_imagens {
+        margin-top: 1.5rem;
+    }
+}
