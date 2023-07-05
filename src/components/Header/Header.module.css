@@ -75,10 +75,10 @@
         order: 2; /* Altera a ordem da imagem no fluxo do documento */
       }
 
-    .menu__toggle img {
+    /* .menu__toggle img {
         padding-right: 0.5rem;
         width: 1.4rem;
-    }
+    } */
 
 
     .header__search {
