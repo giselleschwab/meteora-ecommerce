@@ -6,7 +6,7 @@ import Products from "components/Products/Products";
 import Footer from "components/Footer/Footer";
 import Newsletter from "components/Newsletter/Newsletter";
 import BannerCarousel from "components/Carousel/Carousel";
-import ModalProducts from "components/Modal/ModalProducts";
+import { ModalProducts } from "components/Modal/Modal";
 
 function Homepage() {
     return(
