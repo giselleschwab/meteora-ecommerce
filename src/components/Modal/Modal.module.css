@@ -1,0 +1,145 @@
+.header {
+    display: flex;
+    background-color: var(--preto);
+}
+
+.modal {
+    width: 750px;
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-evenly;
+    font-family: var(--fonte);
+    font-size: 1.25rem;
+    color: var(--branco);
+}
+
+.btn-close {
+    color: var(--branco);
+}
+
+.header__button {
+    padding-left: 19rem;
+}
+
+.header__button__news {
+   padding-left: 4rem;
+}
+.moda__image {
+    width: 380px;
+    ;
+}
+
+.modal__body {
+    display: flex;
+}
+
+.modal__body__description {
+    font-family: var(--fonte);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 2rem;
+    width: 20rem;
+    margin-right: auto;
+}
+
+.modal__body__description h3 {
+    text-align: start;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.modal__body__description p {
+    font-size: 0.82rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid;
+}
+
+.modal__body__description h4 {
+    font-size: 1.25rem;
+}
+
+.modal__body__description h5 {
+    font-size: 0.8rem;
+    color: var(--cinza-claro);
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--cinza-claro);
+}
+
+.modal__form {
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--cinza-claro);
+}
+
+.modal__body__description h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.modal__color__size {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.modal__color__size label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.modal__radio {
+    display: flex;
+}
+
+
+.modal__footer {
+    border-top: none;
+    padding-right: 13rem;
+    padding-top: 0rem;
+}
+
+@media (min-width:600px) and (max-width: 990px) {
+    .header__button {
+        padding-left: 4rem;
+    }
+
+    .modal__body {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 599px) {
+    .modal {
+        width: auto;
+      
+    }
+
+    .header__button {
+        padding-left: 4rem;
+    }
+
+    .moda__image {
+        width: 300px;
+    }
+
+    .modal__body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal__body__description {
+        margin-right: 0;
+        padding: 1rem;
+    }
+
+    .modal__footer{
+        margin-right: 0;
+        padding-right: 6rem;
+    }
+}

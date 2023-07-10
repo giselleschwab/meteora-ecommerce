@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import styles from './Newsletter.module.css';
+import { ModalNews } from 'components/Modal/Modal';
 import BtnPurple from 'components/BtnPurple/BtnPurple';
 
 function Newsletter() {
     const [inputEmail, setInputEmail] = useState('');
+    const [showModalNews, setShowModalNews] = useState(false);
 
     const handleChange = (event) => {
         setInputEmail(event.target.value)
     }
+
+    const handleCloseModal = () => setShowModalNews(false);
+    const handleOpenModal = () => setShowModalNews(true);
 
     return (
         <section className={styles.newsletter}>
@@ -19,9 +24,12 @@ function Newsletter() {
                     onChange={handleChange}
                     placeholder="Digite seu email"
                 />
-                    <BtnPurple label="Enviar" />
+                <BtnPurple label="Enviar" handleClick={handleOpenModal}>
+            
+                </BtnPurple>
             </div>
-        </section>
+            <ModalNews showModalNews={showModalNews} handleCloseModal={handleCloseModal} />
+        </section >
     )
 }
 
