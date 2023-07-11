@@ -1,8 +1,7 @@
 // import Banner from "components/Banner/Banner";
-import Categories from "components/Categories/Categories";
 import Features from "components/Features/Features";
 import Header from "components/Header";
-import Products from "components/Products/Products";
+import ProductPage from "components/ProductsPage/ProductsPage";
 import Footer from "components/Footer/Footer";
 import Newsletter from "components/Newsletter/Newsletter";
 import BannerCarousel from "components/Carousel/Carousel";
@@ -13,9 +12,8 @@ function Homepage() {
      <>
         <Header />
         <BannerCarousel />
-        <Categories />
         <ModalProducts />
-        <Products />
+        <ProductPage />
         <Features />
         <Newsletter />
         <Footer />
