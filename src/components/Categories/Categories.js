@@ -1,23 +1,35 @@
+import { useEffect, useState } from 'react';
+import getCategories from 'API/categories';
 import styles from './Categories.module.css';
-import tshrits from './card-camisetas.png';
-import bags from './card-bolsas.png';
-import shoes from './card-sapatos.png';
-import pants from './card-calças.png';
-import coats from './card-casacos.png';
-import glasses from './card-oculos.png'; 
+
+function Categories({ onCategoryClick }) {
+    const [categoriesList, setCategoriesList] = useState([]);
+  
 
 
-function Categories() {
+    useEffect(() => {
+        async function fetchData() {
+            const response = await getCategories();
+            setCategoriesList(response)
+        }
+        fetchData()
+    }, [])
+
+    const handleCategoryClick = categoryId => {
+        onCategoryClick(categoryId);
+      };
+
     return (
         <section className={styles.categories}>
             <h3> Busque por categoria: </h3>
             <div className={styles.categories__cards}>
-                <img src={tshrits} alt="t-shirts cards"></img>
-                <img src={bags} alt="bags cards"></img>
-                <img src={shoes} alt="shoes cards"></img>
-                <img src={pants} alt="pants cards"></img>
-                <img src={coats} alt="coats cards"></img>
-                <img src={glasses} alt="glasses cards"></img>
+                {categoriesList.map(category => (
+                    <img
+                        key={category.id}
+                        src={category.src}
+                        alt={category.name}
+                        onClick={() => handleCategoryClick(category.id)} />
+                ))}
             </div>
         </section>
     )
