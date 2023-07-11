@@ -31,14 +31,13 @@
             "src": "./src/images/categories/oculos.png"
         }
     ],
-
     "products": [
         {
             "id": 1,
             "name": "Camiseta Conforto",
             "description": "Multicores e tamanhos. Tecido de algodão 100%, fresquinho para o verão. Modelagem unissex.",
             "price": 70,
-            "src": "./src/images/products/camiseta.png",
+            "src": "https://raw.githubusercontent.com/giselleschwab/meteora-ecommerce/main/src/images/products/camiseta.png",
             "colors": [
                 "Mostarda",
                 "Verde",
