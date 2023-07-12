@@ -4,12 +4,14 @@ import logo from './Logo.png';
 import styles from './Header.module.css';
 import HeaderLink from 'components/HeaderLink';
 import SearchBar from 'components/SearchBar';
-import Button from 'components/Button';
+// import Button from 'components/ButtonSearch';
 import iconMenu from './iconMenu.png';
 import { MenuMobile } from 'components/MenuMobile/MenuMobile';
 
+
 function Header() {
     const [menuIsVisible, setMenuIsVisible] = useState(false);
+
 
     const handleMenuToggle = () => {
         setMenuIsVisible(!menuIsVisible)
@@ -19,7 +21,7 @@ function Header() {
         <header className={styles.header}>
             <nav className={styles.header__links}>
                 <Link to="./">
-                    <img className={styles.logo__meteora} src={logo}  alt="Logo Meteora"></img>
+                    <img className={styles.logo__meteora} src={logo} alt="Logo Meteora"></img>
                 </Link>
                 <div className={`${styles.menu__toggle} ${menuIsVisible ? styles.active : ''}`}
                     onClick={handleMenuToggle}>
@@ -43,10 +45,8 @@ function Header() {
                 </div>
             </nav>
             <div className={styles.header__search}>
-                <SearchBar />
-                <Button className={styles.button__search} label="Buscar" />
+                <SearchBar  />
             </div>
-
             {menuIsVisible && (
                 <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
             )}

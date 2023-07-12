@@ -1,13 +1,15 @@
 import BtnPurple from 'components/BtnPurple/BtnPurple';
 import styles from './ProductsPage.module.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext} from 'react';
 import getProducts from 'API/products';
 import getCategories from 'API/categories';
+import SearchContext from 'SearchContext/SearchContext';
 
 function ProductPage() {
     const [categoriesList, setCategoriesList] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
     const [productsList, setProductsList] = useState([]);
+    const { searchValue } = useContext(SearchContext)
   
     useEffect(() => {
       async function fetchData() {
@@ -22,11 +24,17 @@ function ProductPage() {
     const handleCategoryClick = categoryId => {
       setSelectedCategoryId(categoryId);
     };
+    
+    const filteredProducts = productsList.filter((product) => {
+      const productName = product.name.toLowerCase();
+      const searchTerm = searchValue.toLowerCase();
+      const categoryIdMatch = selectedCategoryId
+        ? product.id_category === selectedCategoryId
+        : true;
   
-    const filteredProducts = selectedCategoryId
-      ? productsList.filter(product => product.id_category === selectedCategoryId)
-      : productsList;
-  
+      return productName.includes(searchTerm) && categoryIdMatch;
+    });
+ 
     return (
       <div>
         <section className={styles.categories}>

@@ -1,3 +1,4 @@
+import { SearchProvider } from "SearchContext/SearchContext";
 import Homepage from "pages/Homepage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -5,9 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function AppRoutes() {
     return (
         <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Homepage />}></Route>
-        </Routes>
+            <Routes>
+                    <Route path="/" element={<SearchProvider><Homepage /></SearchProvider>}> </Route>
+            </Routes>
         </BrowserRouter>
     )
 }

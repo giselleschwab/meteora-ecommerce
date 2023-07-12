@@ -7,6 +7,7 @@ import Newsletter from "components/Newsletter/Newsletter";
 import BannerCarousel from "components/Carousel/Carousel";
 import { ModalProducts } from "components/Modal/Modal";
 
+
 function Homepage() {
     return(
      <>
