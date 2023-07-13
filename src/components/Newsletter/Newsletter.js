@@ -28,7 +28,7 @@ function Newsletter() {
             
                 </BtnPurple>
             </div>
-            <ModalNews showModalNews={showModalNews} handleCloseModal={handleCloseModal} />
+            <ModalNews showModalNews={showModalNews} handleCloseModalNews={handleCloseModal} />
         </section >
     )
 }
