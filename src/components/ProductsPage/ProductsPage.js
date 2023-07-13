@@ -3,13 +3,18 @@ import styles from './ProductsPage.module.css'
 import { useEffect, useState, useContext} from 'react';
 import getProducts from 'API/products';
 import getCategories from 'API/categories';
-import SearchContext from 'SearchContext/SearchContext';
+import ProductContext from 'SearchContext/SearchContext';
+import { ModalProducts } from 'components/Modal/Modal';
+// import { ModalProducts } from 'components/Modal/Modal';
 
 function ProductPage() {
     const [categoriesList, setCategoriesList] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
     const [productsList, setProductsList] = useState([]);
-    const { searchValue } = useContext(SearchContext)
+    const [showModal, setShowModal] = useState(false);
+    const { searchValue } = useContext(ProductContext);
+    const { setSelectedProduct } = useContext(ProductContext);
+
   
     useEffect(() => {
       async function fetchData() {
@@ -24,7 +29,8 @@ function ProductPage() {
     const handleCategoryClick = categoryId => {
       setSelectedCategoryId(categoryId);
     };
-    
+
+  
     const filteredProducts = productsList.filter((product) => {
       const productName = product.name.toLowerCase();
       const searchTerm = searchValue.toLowerCase();
@@ -34,7 +40,21 @@ function ProductPage() {
   
       return productName.includes(searchTerm) && categoryIdMatch;
     });
- 
+
+   function handleOpenModal() {
+    setShowModal(true);
+    }
+
+    function handleCloseModal() {
+      setShowModal(false);
+    }
+    
+    const handleModalToggle = (product) => {
+      setSelectedProduct(product)
+      handleOpenModal();
+     
+    }
+     
     return (
       <div>
         <section className={styles.categories}>
@@ -61,13 +81,14 @@ function ProductPage() {
                 <p>{product.description}</p>
                 <h4>R$ {product.price}</h4>
                 <div className={styles.products__btnView}>
-                  <BtnPurple label="Ver mais" />
+                  <BtnPurple label="Ver mais" handleClick={() => handleModalToggle(product)}></BtnPurple>
                 </div>
               </div>
             ))}
           </div>
         </section>
-      </div>
+        <ModalProducts showModal={showModal}  handleCloseModal={handleCloseModal} />
+          </div>
     );
   }
   

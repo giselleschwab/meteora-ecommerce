@@ -1,15 +1,18 @@
 import { createContext, useState } from "react";
 
-const SearchContext = createContext();
+const ProductContext = createContext();
 
-export const SearchProvider = ({ children }) => {
+export const ProductProvider = ({ children }) => {
   const [searchValue, setSearchValue] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+    <ProductContext.Provider value={{ searchValue, setSearchValue, selectedProduct, setSelectedProduct }}>
       {children}
-    </SearchContext.Provider>
+    </ProductContext.Provider>
   );
 };
 
-export default SearchContext;
+
+
+export default ProductContext;

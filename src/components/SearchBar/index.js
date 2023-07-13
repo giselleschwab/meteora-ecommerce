@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import styles from './SearchBar.module.css'
 import Button from "components/ButtonSearch";
-import SearchContext from "SearchContext/SearchContext";
+import ProductContext from "SearchContext/SearchContext";
 
 function SearchBar() {
-    const { searchValue, setSearchValue } = useContext(SearchContext);
+    const { searchValue, setSearchValue } = useContext(ProductContext);
 
     const handleChange = (event) => {
         setSearchValue(event.target.value);
