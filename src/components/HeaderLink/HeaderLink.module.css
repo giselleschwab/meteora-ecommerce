@@ -2,4 +2,5 @@
     text-decoration: none;
     color: var(--branco);
     font-family: var(--fonte);
+    padding: 1rem;
 }

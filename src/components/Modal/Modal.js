@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import Modal from 'react-bootstrap/Modal';
 import styles from './Modal.module.css';
 import check from './check-circle.png';
+import errorIcon from './error.png';
 import closeButton from './icon-close.png'
 import BtnPurple from "components/BtnPurple/BtnPurple";
 import getProducts from "API/products";
@@ -62,7 +63,7 @@ export function ModalProducts({ showModal, handleCloseModal }) {
                                             </label>
                                         ))}
                                     </div>
-                            )}
+                                )}
                             </div>
                         </>
                     )}
@@ -76,18 +77,25 @@ export function ModalProducts({ showModal, handleCloseModal }) {
 }
 
 
-export function ModalNews({ showModalNews, handleCloseModalNews }) {
+export function ModalNews({ showModalNews, handleCloseModalNews, success }) {
+    const imageSrc = success ? check : errorIcon;
+    const title = success ? 'E-mail cadastrado com sucesso!' : 'Erro ao cadastrar o e-mail!';
+    const message = success ? 'Em breve você receberá novidades exclusivas da Meteora.' : 'Ocorreu um erro ao cadastrar o e-mail. Por favor, tente novamente.';
+
     return (
-        <Modal show={showModalNews} onHide={handleCloseModalNews}>
+        <Modal show={showModalNews}
+            onHide={handleCloseModalNews}
+            className="d-flex align-items-center justify-content-center"
+            style={{ maxHeight: '80vh' }}>
             <Modal.Header className={styles.header}>
-                <Modal.Title className={styles.modal__header}>
-                    <img src={check} alt="botão check" className={styles.modal__image}></img>
-                    E-mail cadastrado com sucesso!
-                    <img src={closeButton} className={styles.header__button__news} alt="botão fechar" onClick={handleCloseModalNews}></img>
-                </Modal.Title>
+                <div className={styles.modal__header}>
+                    <img src={imageSrc} alt="icone" className={styles.modal__image} />
+                    {title}
+                </div>
+                <img src={closeButton} className={styles.header__button__news} alt="botão fechar" onClick={handleCloseModalNews}></img>
             </Modal.Header>
             <Modal.Body className={styles.modal__body}>
-                <p>Em breve você receberá novidades exclusivas da Meteora.</p>
+                <p>{message}</p>
             </Modal.Body>
         </Modal>
     );
