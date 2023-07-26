@@ -1,6 +1,6 @@
 .header {
-    display: flex;
     background-color: var(--preto);
+    color: var(--branco);
 }
 
 .modal {
@@ -11,10 +11,15 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-family: var(--fonte);
     font-size: 1.25rem;
     color: var(--branco);
+}
+
+.modal__header div {
+    display: flex;
+    gap: 1rem;
 }
 
 .btn-close {
@@ -25,12 +30,8 @@
     padding-left: 19rem;
 }
 
-.header__button__news {
-   padding-left: 4rem;
-}
 .moda__image {
     width: 380px;
-    ;
 }
 
 .modal__body {
@@ -119,7 +120,6 @@
         width: auto;
       
     }
-
     .header__button {
         padding-left: 4rem;
     }
@@ -142,4 +142,5 @@
         margin-right: 0;
         padding-right: 6rem;
     }
+
 }

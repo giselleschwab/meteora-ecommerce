@@ -1,0 +1,18 @@
+.navbar {
+    background-color: var(--preto);
+    padding: 1rem;
+}
+
+.navbar__toggler {
+    color: var(--verde-meteora);
+}
+
+@media (max-width: 767px) {
+  /* Altere o limite para 767px para mover o search-form-wrapper abaixo do navbar */
+  .searchFormWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+}

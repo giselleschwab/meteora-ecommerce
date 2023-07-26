@@ -1,30 +1,57 @@
-import { useContext } from "react";
-import styles from './SearchBar.module.css'
-import Button from "components/ButtonSearch";
-import ProductContext from "SearchContext/SearchContext";
+import { useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
-function SearchBar() {
-    const { searchValue, setSearchValue } = useContext(ProductContext);
+const Busca = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-    const handleChange = (event) => {
-        setSearchValue(event.target.value);
-    }
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-    const handleSearch = () => {
-        console.log(searchValue)
-    }
+  const handleSearch = () => {
+    onSearch(searchTerm);
+  };
 
-    return (
-        <>
-        <input type="text"
-        className={styles.input__search}
-        value={searchValue}
-        onChange={handleChange}
-        placeholder="Digite o produto"
-        />
-        <Button onClick={handleSearch} label="Buscar" />
-        </>
-    )
-}
+  return (
+    <>
+        <Container>
+            <Form className="ms-auto mb-2 mb-lg-0">
+              <Row>
+                <Col lg={9}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Digite o termo de busca..."
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                  />
+                </Col>
+                <Col lg={3} className="mt-2 mt-lg-0">
+                  <Button variant="primary" onClick={handleSearch}>
+                    Buscar
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+        </Container>
+{/*   
 
-export default SearchBar;
+          <Form>
+            <Col xs={12} className="d-lg-none">
+              <Form.Control
+                type="text"
+                placeholder="Digite o termo de busca..."
+                value={searchTerm}
+                onChange={handleInputChange}
+              />
+            </Col>
+            <Col xs={12} className="d-lg-none mt-2">
+              <Button variant="primary" onClick={handleSearch} block>
+                Buscar
+              </Button>
+            </Col>
+        </Form> */}
+    </>
+  );
+};
+
+export default Busca;

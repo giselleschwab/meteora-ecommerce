@@ -1,6 +1,6 @@
 // import Banner from "components/Banner/Banner";
 import Features from "components/Features/Features";
-import Header from "components/Header";
+import Header from "components/Navbar";
 import ProductPage from "components/ProductsPage/ProductsPage";
 import Footer from "components/Footer/Footer";
 import Newsletter from "components/Newsletter/Newsletter";
