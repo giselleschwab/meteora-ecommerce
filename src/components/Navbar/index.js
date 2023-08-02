@@ -1,52 +1,54 @@
-import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import styles from './Navbar.module.css';
 import HeaderLink from 'components/HeaderLink';
-import SearchForm from 'components/SearchBar';
-import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap';
+import SearchBar from 'components/SearchBar';
 
+
+import { MenuMobile } from 'components/MenuMobile/MenuMobile';
 
 function Header() {
+    const [menuIsVisible, setMenuIsVisible] = useState(false);
+
+    const handleMenuToggle = () => {
+        setMenuIsVisible(!menuIsVisible)
+    }
+
     return (
-        <>
-            <Navbar expand="lg" className={styles.navbar}>
-                <Container fluid>
-                    <Navbar.Brand>
-                        <img src="/Logo.png" alt="logo meteora" />
-                    </Navbar.Brand>
-                    <Navbar.Toggle
-                        aria-controls="navbarSupportedContent"
-                        aria-label="Toggle navigation"
-                    >
-                        <img src="/iconMenu.png" alt="icone menu" />
-                    </Navbar.Toggle>
-                    <Navbar.Collapse id="navbarSupportedContent">
-                        <Nav className="me-auto mb-2 mb-lg-0">
-                            <Nav.Link href="./">
-                                <HeaderLink url="./">Home</HeaderLink>
-                            </Nav.Link>
-                            <Nav.Link href="./lojas">
-                                <HeaderLink url="./lojas">Nossas Lojas</HeaderLink>
-                            </Nav.Link>
-                            <Nav.Link href="./novidades">
-                                <HeaderLink url="./novidades">Novidades</HeaderLink>
-                            </Nav.Link>
-                            <Nav.Link href="./promocoes">
-                                <HeaderLink url="./promocoes">Promoções</HeaderLink>
-                            </Nav.Link>
-                        </Nav>
-                        <Col lg={6} className="d-lg-block d-none">
-                            <SearchForm />
-                        </Col>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-            <Container className="mt-3">
-                <Row>
-                    <Col xs={12} className="d-lg-none" >
-                        <SearchForm />
-                    </Col>
-                </Row>
-            </Container>
-        </>
+        <header className={styles.header}>
+            <nav className={styles.header__links}>
+                <Link to="./">
+                    <img className={styles.logo__meteora} src="./Logo.png"  alt="Logo Meteora"></img>
+                </Link>
+                <div className={`${styles.menu__toggle} ${menuIsVisible ? styles.active : ''}`}
+                    onClick={handleMenuToggle}>
+                    <img src="./iconMenu.png" alt="Menu hamburguer" className={styles.menu__hamburguer}></img>
+                </div>
+                <div className={styles.menu__itens}>
+                    <ul>
+                        <li><HeaderLink url="./">
+                            Home
+                        </HeaderLink></li>
+                        <li><HeaderLink url="./lojas">
+                            Nossa lojas
+                        </HeaderLink></li>
+                        <li><HeaderLink url="./novidades">
+                            Novidades
+                        </HeaderLink></li>
+                        <li><HeaderLink url="./promocoes">
+                            Promoções
+                        </HeaderLink></li>
+                    </ul>
+                </div>
+            </nav>
+            <div className={styles.header__search}>
+                <SearchBar />
+            </div>
+
+            {menuIsVisible && (
+                <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+            )}
+        </header>
     )
 }
 

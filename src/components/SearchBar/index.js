@@ -1,57 +1,35 @@
+
 import { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useContext } from "react";
+import styles from './SearchBar.module.css'
+import Button from "components/ButtonSearch";
+import SearchContext from "SearchContext/SearchContext";
 
-const Busca = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+function SearchBar() {
+    const [searchProduct, setSearchProduct] = useState('');
+    const { searchValue, setSearchValue } = useContext(SearchContext);
 
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+    const handleChange = (event) => {
+        setSearchProduct(event.target.value);
+        setSearchValue(event.target.value);
+    }
 
-  const handleSearch = () => {
-    onSearch(searchTerm);
-  };
+    const handleSearch = () => {
+        console.log(searchValue)
+    }
 
-  return (
-    <>
-        <Container>
-            <Form className="ms-auto mb-2 mb-lg-0">
-              <Row>
-                <Col lg={9}>
-                  <Form.Control
-                    type="text"
-                    placeholder="Digite o termo de busca..."
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                  />
-                </Col>
-                <Col lg={3} className="mt-2 mt-lg-0">
-                  <Button variant="primary" onClick={handleSearch}>
-                    Buscar
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
-        </Container>
-{/*   
 
-          <Form>
-            <Col xs={12} className="d-lg-none">
-              <Form.Control
-                type="text"
-                placeholder="Digite o termo de busca..."
-                value={searchTerm}
-                onChange={handleInputChange}
-              />
-            </Col>
-            <Col xs={12} className="d-lg-none mt-2">
-              <Button variant="primary" onClick={handleSearch} block>
-                Buscar
-              </Button>
-            </Col>
-        </Form> */}
-    </>
-  );
-};
+    return (
+        <>
+        <input type="text"
+        className={styles.input__search}
+        value={searchProduct}
+        onChange={handleChange}
+        placeholder="Digite o produto"
+        />
+        <Button onClick={handleSearch} label="Buscar" />
+        </>
+    )
+}
 
-export default Busca;
+export default SearchBar;

@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/products'
+const API_URL = 'https://api-meteora-sepia.vercel.app/products';
 
 async function getProducts() {
     const connect = await fetch(API_URL);

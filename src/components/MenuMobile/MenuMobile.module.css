@@ -1,7 +1,7 @@
 .menu__mobile {
     position: absolute;
-    width: 144px;
-    height: 220px;
+    width: 170px;
+    height: 250px;
     top: 0; 
     right: 0;
     transform: translateY(-50%, 0);
@@ -10,8 +10,8 @@
     bottom: 0;
     display: flex;
     align-items: center;
+    padding-top: 2.5rem;
     justify-content: center;
-    padding: 4rem 0.5rem 2rem 0.5rem;
     background-color: var(--fundo-mobile);
 }
 
@@ -27,7 +27,6 @@
     flex-direction: column;
     list-style: none;
     padding: 0;
-    gap:0.5rem;
 
  
 }
@@ -39,7 +38,6 @@
     flex-direction: column;
     font-size: 1rem;
     line-height: 1.4375rem;
-    padding-bottom: 0.5rem;
     border-bottom: 2px solid  #CED4DA;
     
 }
