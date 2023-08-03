@@ -1,11 +1,6 @@
 import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import bannerOne from './Imagem_banner1.png';
-import bannerTwo from './Imagem_banner2.png';
-import bannerThree from './Imagem_banner3.png';
-import smallBannerOne from './small_banner_1.png';
-import smallBannerTwo from './small_banner_2.png';
-import smallBannerThree from './small_banner_3.png';
+// import smallBannerThree from './small_banner_3.png';
 
 
 import styles from './Carousel.module.css'
@@ -35,21 +30,21 @@ function BannerCarousel() {
           <Carousel.Item>
             <img
             className={styles.carousel_imagens}
-              src={isMobile ? smallBannerOne : bannerOne}
+              src={isMobile ? '/images/smallbanner1.png': '/images/banner1.png'}
               alt="Banner 1"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
             className={styles.carousel_imagens}
-              src={isMobile ? smallBannerTwo : bannerTwo}
+              src={isMobile ? '/images/smallbanner2.png': '/images/banner2.png'}
               alt="Banner 2"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
             className={styles.carousel_imagens}
-              src={isMobile ? smallBannerThree : bannerThree}
+              src={isMobile ? '/images/smallbanner3.png' : '/images/banner3.png'}
               alt="Banner 3"
             />
           </Carousel.Item>

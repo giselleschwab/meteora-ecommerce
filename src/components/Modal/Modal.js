@@ -1,9 +1,6 @@
 import { useContext, useEffect } from "react";
 import Modal from 'react-bootstrap/Modal';
 import styles from './Modal.module.css';
-import check from './check-circle.png';
-import errorIcon from './error.png';
-import closeButton from './icon-close.png'
 import BtnPurple from "components/BtnPurple/BtnPurple";
 import getProducts from "API/products";
 import ProductContext from "SearchContext/SearchContext";
@@ -26,9 +23,9 @@ export function ModalProducts({ showModal, handleCloseModal }) {
             <Modal show={showModal} onHide={handleCloseModal} size="lg" dialogClassName={styles.modal}>
                 <Modal.Header className={styles.header}>
                     <Modal.Title className={styles.modal__header}>
-                        <img src={check} alt="botão check" className={styles.modal__image}></img>
+                        <img src='images/check-circle.png' alt="botão check" className={styles.modal__image}></img>
                         Confira detalhes sobre o produto
-                        <img src={closeButton} className={styles.header__button} alt="botão fechar" onClick={handleCloseModal}></img>
+                        <img src='images/icon-close.png' className={styles.header__button} alt="botão fechar" onClick={handleCloseModal}></img>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className={styles.modal__body}>
@@ -79,9 +76,9 @@ export function ModalProducts({ showModal, handleCloseModal }) {
 
 
 export function ModalNews({ showModalNews, handleCloseModalNews, success }) {
-    const imageSrc = success ? check : errorIcon;
+    const imageSrc = success ? 'images/check-circle.png': 'images/error.png';
     const title = success ? 'E-mail cadastrado com sucesso!' : 'Erro ao cadastrar o e-mail!';
-    const message = success ? 'Em breve você receberá novidades exclusivas da Meteora.' : 'Ocorreu um erro ao cadastrar o e-mail. Por favor, tente novamente.';
+    const message = success ? 'Em breve você receberá novidades exclusivas da Meteora.' : 'Ocorreu um erro ao cadastrar o e-mail. Por favor, digite um e-mail válido';
 
     return (
         <Modal show={showModalNews}
@@ -93,7 +90,7 @@ export function ModalNews({ showModalNews, handleCloseModalNews, success }) {
                     <img src={imageSrc} alt="icone" className={styles.modal__image} />
                     {title}
                 </div>
-                <img src={closeButton} className={styles.header__button__news} alt="botão fechar" onClick={handleCloseModalNews}></img>
+                <img src='images/icon-close.png' className={styles.header__button__news} alt="botão fechar" onClick={handleCloseModalNews}></img>
             </Modal.Header>
             <Modal.Body className={styles.modal__body}>
                 <p>{message}</p>
