@@ -26,6 +26,7 @@ h3 {
 .products__description h4 {
     font-family: var(--fonte);
     padding-left: 1rem;
+    margin-top: 1rem;
     margin-bottom: 0.8rem;
 }
 

@@ -34,7 +34,7 @@ export function ModalProducts({ showModal, handleCloseModal }) {
                 <Modal.Body className={styles.modal__body}>
                     {selectedProduct && (
                         <>
-                            <img src={selectedProduct.src} alt={selectedProduct.name} className={styles.moda__image}></img>
+                            <img src={selectedProduct.src} alt={selectedProduct.name} className={styles.modal__photo}></img>
                             <div className={styles.modal__body__description}>
                                 <h3>{selectedProduct.name}</h3>
                                 <p>{selectedProduct.description}</p>
@@ -64,14 +64,15 @@ export function ModalProducts({ showModal, handleCloseModal }) {
                                         ))}
                                     </div>
                                 )}
+                                <div className={styles.modal__btn}>
+                                    <BtnPurple label="Adicionar à sacola" />
+                                </div>
                             </div>
                         </>
                     )}
                 </Modal.Body >
-                <Modal.Footer className={styles.modal__footer}>
-                    <BtnPurple label="Adicionar à sacola" />
-                </Modal.Footer>
             </Modal >
+
         </>
     );
 }
