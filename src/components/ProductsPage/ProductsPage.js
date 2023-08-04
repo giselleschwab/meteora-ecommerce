@@ -12,7 +12,7 @@ function ProductPage() {
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
     const [productsList, setProductsList] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const { searchValue } = useContext(ProductContext);
+    const { searchValue, setSearchValue } = useContext(ProductContext);
     const { setSelectedProduct } = useContext(ProductContext);
 
   
@@ -28,6 +28,7 @@ function ProductPage() {
   
     const handleCategoryClick = categoryId => {
       setSelectedCategoryId(categoryId);
+      setSearchValue('')
     };
 
   

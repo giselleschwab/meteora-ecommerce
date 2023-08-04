@@ -1,11 +1,10 @@
 import styles from './ButtonSearch.module.css'
 
-function Button({ label, handleClick, searchProducts }) {
+function Button({ label, handleClick }) {
     return (
         <button
             className={styles.button}
             onClick={handleClick}
-            onSearch={searchProducts}
         >
             {label}
         </button>
