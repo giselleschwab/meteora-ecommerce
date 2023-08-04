@@ -1,6 +1,5 @@
 import { Carousel } from "react-bootstrap";
 import { useState, useEffect } from "react";
-// import smallBannerThree from './small_banner_3.png';
 
 
 import styles from './Carousel.module.css'
@@ -9,14 +8,12 @@ function BannerCarousel() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-      // Atualiza o estado quando a tela é redimensionada
       const handleResize = () => {
         setIsMobile(window.innerWidth < 768);
       };
   
       window.addEventListener('resize', handleResize);
   
-      // Define o estado inicial com base no tamanho da tela atual
       setIsMobile(window.innerWidth < 768);
   
       return () => {
