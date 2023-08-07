@@ -14,7 +14,7 @@
 ## Sobre o Projeto
 Este projeto foi desenvolvido na 7ª edição do Challenge Front-End da Alura. O desafio consistia em criar um e-commerce completo para a marca fictícia "Meteora".
 
-Durante o desafio foi disponibilizado pela Alura o design do projeto pelo [Figma](https://www.figma.com/file/2TLgt8UjsWUViWlmpXu5Fz/Challenge-Front-end-%7C-Loja-Meteora?type=design&mode=design&t=Rw0jRHfofLlvVqWu-0), e a partir dele deveríamos contruir nossa aplicação. Optei por construir o projeto utilizando a biblioteca React.js, para estilização utilizei o CSS modules, e inclui Bootstrap para auxiliar na criação do carrossel e dos modais.
+Durante o desafio foi disponibilizado pela Alura o design do projeto pelo [Figma](https://www.figma.com/file/2TLgt8UjsWUViWlmpXu5Fz/Challenge-Front-end-%7C-Loja-Meteora?type=design&mode=design&t=Rw0jRHfofLlvVqWu-0), e a partir dele deveríamos construir nossa aplicação. Optei por construir o projeto utilizando a biblioteca React.js, para estilização utilizei o CSS modules, e inclui Bootstrap para auxiliar na criação do carrossel e dos modais.
 
 [Clique aqui para acessar o site](https://meteora-ecommerce-nine.vercel.app/)
 

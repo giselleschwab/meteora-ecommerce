@@ -7,7 +7,7 @@ import ProductContext from "SearchContext/SearchContext";
 
 function SearchBar() {
     const [searchProduct, setSearchProduct] = useState('');
-    const { searchValue, setSearchValue } = useContext(ProductContext);
+    const { setSearchValue } = useContext(ProductContext);
 
     const handleChange = (event) => {
         setSearchProduct(event.target.value);
@@ -15,8 +15,7 @@ function SearchBar() {
     }
 
     const handleSearch = () => {
-        console.log(searchValue)
-
+        console.log(searchProduct)
     }
     
 
